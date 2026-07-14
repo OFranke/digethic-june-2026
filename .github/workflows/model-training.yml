@@ -22,3 +22,6 @@ jobs:
             with:
               name: baummethoden_lr.pickle
               path: data/models/baummethoden_lr.pickle
+          - name: Run tests
+            run: |
+              pytest
