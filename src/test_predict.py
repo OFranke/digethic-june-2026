@@ -3,7 +3,7 @@ def add_one(x):
 
 
 def test_answer():
-    assert add_one(3) == 6
+    assert add_one(3) == 4
 
 
 def test_trained_model():
