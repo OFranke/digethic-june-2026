@@ -36,3 +36,28 @@ for i in range(len(data["daily"]["time"])):
         + str(data["daily"]["temperature_2m_max"][i])
         + "°C"
     )
+
+
+historical_url = "https://archive-api.open-meteo.com/v1/archive"
+
+historical_params = {
+    "latitude": latitude,
+    "longitude": longitude,
+    "start_date": "2019-03-08",
+    "end_date": "2019-03-08",
+    "daily": "temperature_2m_mean",
+}
+
+historical_response = requests.get(params=historical_params, url=historical_url)
+
+historical_data = historical_response.json()
+
+# print(historical_data)
+
+print(
+    "Die Temperatur am "
+    + historical_data["daily"]["time"][0]
+    + " war "
+    + str(historical_data["daily"]["temperature_2m_mean"][0])
+    + "°C"
+)
